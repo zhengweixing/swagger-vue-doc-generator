@@ -1,10 +1,9 @@
-### {{&description}}
-
-#### Status Code
-{{@key}}
+### Status {{@key}} 
+    {{&description}}
 
 {{#ifDefine this 'headers'}}
-#### Response Headers
+  Response Headers
+
 | Name | Type | Default value | Description |
 | ---- | ---- | ------------- | ----------- |
 {{#each headers}}
@@ -13,7 +12,8 @@
 {{/ifDefine}}
 
 {{#ifDefine this 'schema'}}
-#### Response object
+  Response object
+
 {{#ifDefine schema 'properties'}}
 | Name | Type | Format | Example | Description |
 | ---- | ---- | ------ | ------- | ----------- |
@@ -22,6 +22,7 @@
 {{/each}}
 {{else}}
 {{/ifDefine}}
+
 {{#ifDefine schema "ref"}}
 * [{{&schema.ref}}](../{{&modelPath}}/{{&schema.ref}}.md)
 {{/ifDefine}}
