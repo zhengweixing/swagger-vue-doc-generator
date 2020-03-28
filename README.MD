@@ -78,3 +78,7 @@ npm install --dev
 ```bash
 npm run test
 ```
+
+## 修改
+1. 文档产生优化
+2. 不直接调用axios，而是调用自己的请求，方便自己在请求前处理或请求后处理，比如加token或者是返回状态判断
