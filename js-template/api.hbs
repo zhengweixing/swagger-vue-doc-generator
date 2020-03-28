@@ -1,5 +1,5 @@
 /* eslint-disable */
-import axios from 'axios'
+import doRequest from '@/utils/request'
 import qs from 'qs'
 let domain = ''
 export const getDomain = () => {
@@ -17,11 +17,11 @@ export const request = (method, url, body, queryParameters, form, config)=>{
   }
   // let queryUrl = url+(keys.length > 0 ? '?' + (keys.map(key => key + '=' + encodeURIComponent(queryParameters[key])).join('&')) : '')
   if(body){
-      return axios[method](queryUrl,body,config)
+      return doRequest[method](queryUrl,body,config)
   } else if (method === 'get') {
-      return axios[method](queryUrl, config)
+      return doRequest[method](queryUrl, config)
   } else {
-      return axios[method](queryUrl,qs.stringify(form),config)
+      return doRequest[method](queryUrl,qs.stringify(form),config)
   }
 }
 
